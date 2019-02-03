@@ -1,0 +1,16 @@
+language: php
+
+sudo: false
+
+php:
+  - 7.3
+
+# Build is failing in moment:
+# https://docs.travis-ci.com/user/for-beginners/#breaking-the-build
+
+# Travis and docker https://docs.travis-ci.com/user/docker/
+# PHP in Travis https://docs.travis-ci.com/user/languages/php/
+
+before_script: composer install
+
+script: ./vendor/bin/phpunit
