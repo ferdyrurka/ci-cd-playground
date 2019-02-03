@@ -1,5 +1,7 @@
 # PHP travis
 
+[![Build Status](https://travis-ci.org/ferdyrurka/php-travis.svg?branch=master)](https://travis-ci.org/ferdyrurka/php-travis)
+
 This repository is created for test and learn Travis CI.
 
 ## Run tests
