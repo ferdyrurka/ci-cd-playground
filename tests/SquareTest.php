@@ -18,7 +18,7 @@ class SquareTest extends TestCase
     public function calcGood(): void
     {
         $square = new Square(9.4);
-        $this->assertEquals(9.4^2, $square->calc());
+        $this->assertEquals(9.4 * 9.4, $square->calc());
     }
 
     /**
