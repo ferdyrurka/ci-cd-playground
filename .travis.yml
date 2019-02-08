@@ -11,6 +11,11 @@ php:
 # Travis and docker https://docs.travis-ci.com/user/docker/
 # PHP in Travis https://docs.travis-ci.com/user/languages/php/
 
-before_script: composer install
+before_script:
+  - composer install
 
-script: ./vendor/bin/phpunit
+script:
+  - ./vendor/bin/phpunit
+
+after_success:
+  - travis_retry php vendor/bin/php-coveralls
