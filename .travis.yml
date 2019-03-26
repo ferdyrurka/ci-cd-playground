@@ -7,7 +7,6 @@ services:
 
 php:
   - 7.3
-  - 7.2
 
 # Build is failing in moment:
 # https://docs.travis-ci.com/user/for-beginners/#breaking-the-build
@@ -18,6 +17,7 @@ php:
 before_script:
   - mkdir ./var ./var/cache ./var/cache/test ./var/cache/dev ./var/cache/prod
   - chmod 777 -R ./var
+  - cp .env.dist .env
   - composer install
   - docker-compose up -d
 
