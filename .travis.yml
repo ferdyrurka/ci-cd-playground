@@ -22,7 +22,7 @@ before_script:
   - docker-compose up -d
 
 script:
-  - docker container exec travis_app ls ./
+  - docker container exec travis_app php bin/console debug:container
   - docker container exec travis_app php ./vendor/bin/phpunit
 
 after_success:
