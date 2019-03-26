@@ -23,10 +23,6 @@ class HomeControllerTest extends WebTestCase
     protected function setUp(): void
     {
         $this->client = self::createClient();
-        $this->client->setServerParameters([
-            'HTTP_HOST' => 'localhost',
-            'HTTP_USER_AGENT' => 'TESTS USER'
-        ]);
     }
 
     /**
