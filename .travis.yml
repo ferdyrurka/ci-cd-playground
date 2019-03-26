@@ -2,8 +2,12 @@ language: php
 
 sudo: false
 
+services:
+  - docker
+
 php:
   - 7.3
+  - 7.2
 
 # Build is failing in moment:
 # https://docs.travis-ci.com/user/for-beginners/#breaking-the-build
@@ -12,10 +16,13 @@ php:
 # PHP in Travis https://docs.travis-ci.com/user/languages/php/
 
 before_script:
+  - mkdir ./var ./var/cache ./var/cache/test ./var/cache/dev ./var/cache/prod
+  - chmod 777 -R ./var
   - composer install
+  - docker-compose up -d
 
 script:
-  - ./vendor/bin/phpunit
+  - docker container exec php ./vendor/bin/phpunit
 
 after_success:
   - travis_retry php vendor/bin/php-coveralls
