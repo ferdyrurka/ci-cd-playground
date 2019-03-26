@@ -19,10 +19,10 @@ before_script:
   - chmod 777 -R ./var
   - cp .env.dist .env
   - composer install
-  - composer require symfony/browser-kit
   - docker-compose up -d
 
 script:
+  - docker container exec travis_app ls ./
   - docker container exec travis_app php ./vendor/bin/phpunit
 
 after_success:
