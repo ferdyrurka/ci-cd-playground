@@ -19,6 +19,7 @@ before_script:
   - chmod 777 -R ./var
   - cp .env.dist .env
   - composer install
+  - cp phpunit.xml.dist phpunit.xml
   - docker-compose up -d
 
 script:
