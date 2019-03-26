@@ -1,5 +1,9 @@
 .phpunit.result.cache
 composer.lock
+symfony.lock
+.env
+phpunit.xml
 /vendor/
 .idea
 /build/
+/var/

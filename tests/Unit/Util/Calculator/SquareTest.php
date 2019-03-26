@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Test;
+namespace App\Test\Unit\Util\Calculator;
 
-use App\Square;
+use App\Util\Calculator\Square;
 use PHPUnit\Framework\TestCase;
 use \Exception;
 
