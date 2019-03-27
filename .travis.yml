@@ -24,7 +24,7 @@ before_script:
   - docker-compose up -d
 
 script:
-  - docker container exec travis_app php ./vendor/bin/phpunit
+  - docker container exec travis_app php ./vendor/bin/phpunit -v
 
 after_success:
   - travis_retry php vendor/bin/php-coveralls
