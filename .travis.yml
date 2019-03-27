@@ -17,7 +17,7 @@ php:
 before_script:
   - mkdir -p ./var/cache ./build/logs
   - mkdir ./var/cache/test ./var/cache/dev ./var/cache/prod
-  - chmod 777 -R ./build
+  - chmod 777 -R ./var
   - cp .env.dist .env
   - cp phpunit.xml.dist phpunit.xml
   - composer install
@@ -27,5 +27,6 @@ script:
   - docker container exec travis_app php ./vendor/bin/phpunit
 
 after_success:
-  - travis_retry docker container exec -e TRAVIS=$TRAVIS TRAVIS_JOB_ID=$TRAVIS_JOB_ID travis_app php vendor/bin/php-coveralls -v
+  - travis_retry docker container exec -e TRAVIS=$TRAVIS TRAVIS_JOB_ID=$TRAVIS_JOB_ID TRAVIS_BRANCH=$TRAVIS_BRANCH
+      TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST travis_app php vendor/bin/php-coveralls -v
   - docker-compose down -v
