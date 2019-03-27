@@ -29,4 +29,3 @@ script:
 after_success:
   - travis_retry docker container exec -e TRAVIS=$TRAVIS TRAVIS_JOB_ID=$TRAVIS_JOB_ID TRAVIS_BRANCH=$TRAVIS_BRANCH
       TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST travis_app php vendor/bin/php-coveralls -v
-  - docker-compose down -v
