@@ -15,7 +15,7 @@ php:
 # PHP in Travis https://docs.travis-ci.com/user/languages/php/
 
 before_script:
-  - mkdir -p ./var/cache ./build/logs
+  - mkdir -p ./var/cache
   - mkdir ./var/cache/test ./var/cache/dev ./var/cache/prod
   - chmod 777 -R ./var
   - cp .env.dist .env
