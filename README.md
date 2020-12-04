@@ -1,4 +1,4 @@
-# PHP travis
+# CI playground
 
 [![Build Status](https://travis-ci.org/ferdyrurka/php-travis.svg?branch=master)](https://travis-ci.org/ferdyrurka/php-travis)
 
