@@ -1,13 +1,13 @@
-version: '3.3'
+version: '3'
 
 services:
   app:
     build:
       context: ./etc/
       dockerfile: apache2.dockerfile
-    image: travis-app
+    image: ci-app
     ports:
       - 80:80
     volumes:
       - ./:/var/www/html
-    container_name: travis_app
+    container_name: ci_app

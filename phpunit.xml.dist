@@ -5,6 +5,11 @@
         <env name="APP_ENV" value="test" />
         <env name="APP_DEBUG" value="1" />
         <env name="SHELL_VERBOSITY" value="-1" />
+
+        <!-- ###+ symfony/framework-bundle ### -->
+        <env name="APP_ENV" value="dev"/>
+        <env name="APP_SECRET" value="e6931f9dcab68ef19005bd8da919e602"/>
+        <!-- ###- symfony/framework-bundle ### -->
     </php>
     <logging>
         <log type="coverage-clover" target="build/logs/clover.xml"/>

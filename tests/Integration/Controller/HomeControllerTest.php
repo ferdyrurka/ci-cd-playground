@@ -1,28 +1,26 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Test\Integration\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpKernel\Client;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-/**
- * Class IndexTest
- * @package App\Test\Integration
- */
 class HomeControllerTest extends WebTestCase
 {
     /**
-     * @var Client
+     * @var HttpClientInterface
      */
-    private $client;
+    private HttpClientInterface $client;
 
     /**
      *
      */
     protected function setUp(): void
     {
-        $this->client = self::createClient();
+        $this->client = HttpClient::create(['base_uri' => 'http://127.0.0.1']);
     }
 
     /**
@@ -30,7 +28,9 @@ class HomeControllerTest extends WebTestCase
      */
     public function homePageOk(): void
     {
-        $this->client->request('GET', '/');
-        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
+        self::assertEquals(
+            200,
+            $this->client->request('GET', '/')->getStatusCode()
+        );
     }
 }
