@@ -1,12 +1,11 @@
 language: php
 
-sudo: false
-
 services:
   - docker
 
 php:
   - 7.4
+  - 8.0
 
 # Build is failing in moment:
 # https://docs.travis-ci.com/user/for-beginners/#breaking-the-build
