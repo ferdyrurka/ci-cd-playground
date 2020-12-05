@@ -7,12 +7,6 @@ php:
   - 7.4
   - 8
 
-# Build is failing in moment:
-# https://docs.travis-ci.com/user/for-beginners/#breaking-the-build
-
-# Travis and docker https://docs.travis-ci.com/user/docker/
-# PHP in Travis https://docs.travis-ci.com/user/languages/php/
-
 before_script:
   - mkdir -p ./var/cache
   - mkdir ./var/cache/test ./var/cache/dev ./var/cache/prod

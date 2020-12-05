@@ -2,9 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      image: circleci/php:8-apache-browsers
+      - image: circleci/php:8-apache-browsers
 
     working_directory: /var/www/html
+
     steps:
       - checkout
 
