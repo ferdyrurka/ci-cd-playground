@@ -13,10 +13,10 @@ before_script:
   - cp .env.dist .env
   - cp phpunit.xml.dist phpunit.xml
   - composer install -n
-  - docker-compose up -d
+  - make run
 
 script:
-  - docker container exec ci_app php ./vendor/bin/phpunit
+  - make phpunit
 
 after_success:
-  - docker-compose down
+  - make stop

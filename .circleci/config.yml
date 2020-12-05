@@ -18,7 +18,7 @@ jobs:
       - run: mkdir ./var/cache/test ./var/cache/dev ./var/cache/prod
       - run: chmod 777 -R ./var
       - run: cp .env.dist .env
-      - run: cp phpunit.xml.dist phpunit.xml
+      - run: sudo service apache2 start
 
       - restore_cache:
           keys:
@@ -30,6 +30,6 @@ jobs:
       - save_cache:
           key: composer-v2-{{ checksum "composer.lock" }}
           paths:
-            - vendor
+            - ./vendor
 
       - run: vendor/bin/phpunit
