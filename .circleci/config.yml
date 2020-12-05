@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  build:
+    docker:
+      image: circleci/php:8-apache-browsers
+
+    working_directory: /var/www/html
+    steps:
+      - checkout
+
+      - run: sudo apt update
+      - run: apt-get install -y libpq-dev
+      - run: a2enmod rewrite
+
+      - run: mkdir -p ./var/cache
+      - run: mkdir ./var/cache/test ./var/cache/dev ./var/cache/prod
+      - run: chmod 777 -R ./var
+      - run: cp .env.dist .env
+      - run: cp phpunit.xml.dist phpunit.xml
+
+      - restore_cache:
+          keys:
+            - composer-v2-{{ checksum "composer.lock" }}
+            - composer-v2-
+
+      - run: ./composer.phar install -n
+
+      - save_cache:
+          key: composer-v2-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+
+      - run: vendor/bin/phpunit

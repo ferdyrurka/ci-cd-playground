@@ -5,7 +5,7 @@ services:
 
 php:
   - 7.4
-  - 8.0
+  - 8
 
 # Build is failing in moment:
 # https://docs.travis-ci.com/user/for-beginners/#breaking-the-build
@@ -19,11 +19,11 @@ before_script:
   - chmod 777 -R ./var
   - cp .env.dist .env
   - cp phpunit.xml.dist phpunit.xml
-  - composer install
+  - composer install -n
   - docker-compose up -d
 
 script:
-  - docker container exec travis_app php ./vendor/bin/phpunit
+  - docker container exec ci_app php ./vendor/bin/phpunit
 
 after_success:
   - docker-compose down
