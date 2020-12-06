@@ -19,6 +19,8 @@ script:
   - make cs
   - make phpunit
   - make infection
+  -
 
 after_success:
   - make stop
+  - travis_retry php vendor/bin/php-coveralls
