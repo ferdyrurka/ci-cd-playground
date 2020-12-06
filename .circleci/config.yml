@@ -33,4 +33,4 @@ jobs:
           paths:
             - ./vendor
 
-      - run: make phpunit
+      - run: vendor/bin/phunit
