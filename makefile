@@ -1,13 +1,13 @@
 .Phony: start
-run_tests:
+start:
 		docker-compose up -d
 
 .Phony: stop
-run_tests:
+stop:
 		docker-compose down -v
 
 .Phony: phpunit
-run_tests:
+phpunit:
 		docker container exec ci_app php ./vendor/bin/phpunit
 
 .Phony: cs

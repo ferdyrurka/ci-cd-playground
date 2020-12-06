@@ -33,4 +33,4 @@ jobs:
           paths:
             - ./vendor
 
-      - run: vendor/bin/phpunit
+      - run: make phpunit
