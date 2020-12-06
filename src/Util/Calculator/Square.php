@@ -1,14 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Util\Calculator;
 
-use \Exception;
+use Exception;
 
-/**
- * Class Square
- * @package App
- */
 class Square implements CalculatorInterface
 {
     /**

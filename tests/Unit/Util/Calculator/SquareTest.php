@@ -1,15 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Test\Unit\Util\Calculator;
 
 use App\Util\Calculator\Square;
 use PHPUnit\Framework\TestCase;
-use \Exception;
+use Exception;
 
-/**
- * Class SquareTest
- */
 class SquareTest extends TestCase
 {
     /**
@@ -18,7 +16,7 @@ class SquareTest extends TestCase
     public function calcGood(): void
     {
         $square = new Square(9.4);
-        $this->assertEquals(9.4 * 9.4, $square->calc());
+        self::assertEquals(9.4 * 9.4, $square->calc());
     }
 
     /**
@@ -32,4 +30,3 @@ class SquareTest extends TestCase
         $square->calc();
     }
 }
-

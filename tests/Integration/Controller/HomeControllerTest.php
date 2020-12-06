@@ -15,9 +15,6 @@ class HomeControllerTest extends WebTestCase
      */
     private HttpClientInterface $client;
 
-    /**
-     *
-     */
     protected function setUp(): void
     {
         $this->client = HttpClient::create(['base_uri' => 'http://127.0.0.1']);

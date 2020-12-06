@@ -16,6 +16,7 @@ before_script:
   - make start
 
 script:
+  - make cs
   - make phpunit
   - make infection
 

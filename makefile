@@ -12,7 +12,7 @@ phpunit:
 
 .Phony: cs
 cs:
-	echo "Run code sniffer"
+	docker container exec ci_app php ./vendor/bin/phpcs
 
 .Phony: infection
 infection:
