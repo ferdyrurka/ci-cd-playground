@@ -17,6 +17,7 @@ before_script:
 
 script:
   - make phpunit
+  - make infection
 
 after_success:
   - make stop

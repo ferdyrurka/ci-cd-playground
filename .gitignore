@@ -20,3 +20,6 @@ phpunit.xml
 /phpunit.xml
 .phpunit.result.cache
 ###< phpunit/phpunit ###
+
+infection.log
+per-mutator.md
