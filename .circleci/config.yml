@@ -34,6 +34,6 @@ jobs:
             - ./vendor
 
       - run: ./vendor/bin/phpcs
-      - run: ./vendor/bin/phunit
+      - run: ./vendor/bin/phpunit
       - run: ./vendor/bin/infection --min-covered-msi=70 --min-msi=70 -n
       - run: cat ./infection.log
