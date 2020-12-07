@@ -24,4 +24,4 @@ script:
 
 after_success:
   - make stop
-  - travis_retry ./vendor/bin/php-coveralls
+  - travis_retry docker container exec ci_app php ./vendor/bin/php-coveralls
