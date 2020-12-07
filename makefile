@@ -10,10 +10,6 @@ stop:
 phpunit:
 		docker container exec ci_app php ./vendor/bin/phpunit
 
-.Phony: coverage_phpunit
-coverage_phpunit:
-		docker container exec ci_app php ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml --configuration phpunit.xml
-
 .Phony: cs
 cs:
 	docker container exec ci_app php ./vendor/bin/phpcs
