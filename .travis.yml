@@ -18,8 +18,8 @@ before_script:
 script:
   - make cs
   - make phpunit
+  - make coverage_phpunit
   - make infection
-  -
 
 after_success:
   - make stop
