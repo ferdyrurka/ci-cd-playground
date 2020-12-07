@@ -25,4 +25,4 @@ script:
 
 after_success:
   - make stop
-  - travis_retry php vendor/bin/php-coveralls
+  - travis_retry ./vendor/bin/php-coveralls
