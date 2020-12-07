@@ -19,6 +19,8 @@ jobs:
       - run: chmod 777 -R ./var
       - run: cp .env.dist .env
       - run: cp phpunit.xml.dist phpunit.xml
+      - run: export XDEBUG_MODE=coverage
+
       - run: sudo service apache2 start
 
       - restore_cache:
