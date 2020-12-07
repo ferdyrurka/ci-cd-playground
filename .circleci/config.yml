@@ -19,7 +19,6 @@ jobs:
       - run: chmod 777 -R ./var
       - run: cp .env.dist .env
       - run: cp phpunit.xml.dist phpunit.xml
-      - run: export XDEBUG_MODE=coverage
 
       - run: sudo service apache2 start
 
@@ -37,5 +36,8 @@ jobs:
 
       - run: ./vendor/bin/phpcs
       - run: ./vendor/bin/phpunit
-      - run: ./vendor/bin/infection --min-covered-msi=70 --min-msi=70 -n
+      - run:
+          command: ./vendor/bin/infection --min-covered-msi=70 --min-msi=70 -n
+          environment:
+            XDEBUG_MODE: coverage
       - run: cat ./infection.log
