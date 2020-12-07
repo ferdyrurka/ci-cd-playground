@@ -23,5 +23,4 @@ script:
   - make infection
 
 after_success:
-  - travis_retry docker container exec ci_app php ./vendor/bin/php-coveralls
   - make stop
