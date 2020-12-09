@@ -8,24 +8,13 @@ use Exception;
 
 class Square implements CalculatorInterface
 {
-    /**
-     * @var float
-     */
-    private $a;
+    private float $a;
 
-    /**
-     * Square constructor.
-     * @param $a
-     */
     public function __construct(float $a)
     {
         $this->a = $a;
     }
 
-    /**
-     * @return float
-     * @throws Exception
-     */
     public function calc(): float
     {
         if ($this->a < 0) {

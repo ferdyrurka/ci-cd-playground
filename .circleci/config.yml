@@ -36,6 +36,8 @@ jobs:
 
       - run: ./vendor/bin/phpcs
       - run: ./vendor/bin/phpunit
+      - run: ./vendor/bin/phpmd src,tests text phpmd.xml --suffixes php
+      - run: ./vendor/bin/phpstan analyse -l 7 src tests
       - run:
           command: ./vendor/bin/infection --min-covered-msi=70 --min-msi=70 -n
           environment:
